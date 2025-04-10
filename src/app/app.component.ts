@@ -50,27 +50,26 @@ export class AppComponent {
     const element = document.getElementById('page1');
     const element2 = document.getElementById('page2');
 
-    
-
     if (element) {
       element.classList.toggle('flipped');
+
+      const child = this.childDiv.nativeElement;
+      const child2 = this.childDiv2.nativeElement;
+      const parent = this.parentDiv.nativeElement;
+
+      this.renderer.removeClass(parent, 'active-parent');
+
+      // Then, conditionally add it later after DOM has updated
+      setTimeout(() => {
+        if (child.classList.contains('flipped') && !child2.classList.contains('flipped')) {
+          this.renderer.addClass(parent, 'active-parent');
+        }
+      }, 600);
     }
 
     if (element2) {
       element2.classList.remove('incz');
 
-    }
-
-    const child = this.childDiv.nativeElement;
-    const child2 = this.childDiv2.nativeElement;
-    const parent = this.parentDiv.nativeElement;
-
-    if (child.classList.contains('flipped') && !child2.classList.contains('flipped')) {
-      setTimeout(() => {
-        this.renderer.addClass(parent, 'active-parent');
-      },600);
-    } else {
-      this.renderer.removeClass(parent, 'active-parent');
     }
   }
 
@@ -82,22 +81,23 @@ export class AppComponent {
       element.classList.toggle('flipped');
       element.classList.add('incz');
 
+      const child = this.childDiv.nativeElement;
+      const child2 = this.childDiv2.nativeElement;
+      const parent = this.parentDiv.nativeElement;
+
+      // Always remove active-parent immediately
+      this.renderer.removeClass(parent, 'active-parent');
+
+      // Re-evaluate after 600ms (post DOM updates)
+      setTimeout(() => {
+        if (!(child.classList.contains('flipped') && child2.classList.contains('flipped'))) {
+          this.renderer.addClass(parent, 'active-parent');
+        }
+      }, 600);
     }
     if (element1) {
       element1.classList.add('incz');
 
-    }
-
-    const child = this.childDiv.nativeElement;
-    const child2 = this.childDiv2.nativeElement;
-    const parent = this.parentDiv.nativeElement;
-
-    if (child.classList.contains('flipped') && child2.classList.contains('flipped')) {
-      this.renderer.removeClass(parent, 'active-parent');
-    } else {
-      setTimeout(() => {
-        this.renderer.addClass(parent, 'active-parent');
-      },600);
     }
   }
 }
