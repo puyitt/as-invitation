@@ -68,7 +68,7 @@ export class AppComponent {
     if (child.classList.contains('flipped') && !child2.classList.contains('flipped')) {
       setTimeout(() => {
         this.renderer.addClass(parent, 'active-parent');
-      },1000);
+      },600);
     } else {
       this.renderer.removeClass(parent, 'active-parent');
     }
@@ -97,7 +97,7 @@ export class AppComponent {
     } else {
       setTimeout(() => {
         this.renderer.addClass(parent, 'active-parent');
-      },1000);
+      },600);
     }
   }
 }
