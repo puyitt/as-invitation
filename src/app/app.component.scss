@@ -154,7 +154,11 @@ div {
     margin-right: auto;
     border-radius: 6px;
     perspective: 1200px;
-    // background-color: #fdfeff;
+    
+
+    &.active-parent {
+      background-color: #fdfeff;
+    }
 }
 
 
@@ -193,9 +197,9 @@ div {
     transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform: rotateY(-180deg);
 
-    .back {
-      right: 1px;
-    }
+    // .back {
+    //   right: 1px;
+    // }
   }
 }
 
@@ -235,9 +239,9 @@ div {
     transform: rotateY(-180deg);
     z-index: 4;
 
-    .back {
-      right: 1px;
-    }
+    // .back {
+    //   right: 1px;
+    // }
   }
 }
 

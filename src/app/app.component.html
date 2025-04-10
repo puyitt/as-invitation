@@ -20,8 +20,8 @@
     <img src="../assets/wax.png" class="wax" alt="">
     <div class="front flap"></div>
     <div class="front pocket"></div>
-    <div class="letter">
-          <div (click)="click1()" class="img1" id="page1">
+    <div class="letter" #parentDiv>
+          <div (click)="click1()" class="img1" id="page1" #childDiv>
             <div class="front">
               <img src="../assets/1.png" alt="">
               <svg width="70" height="70" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg" class="hand hand2">
@@ -59,7 +59,7 @@
               </svg>
             </div>
           </div>
-          <div (click)="click2()" class="img2" id="page2">
+          <div (click)="click2()" class="img2" id="page2" #childDiv2>
             <div class="front">
               <img src="../assets/3.png" alt="">
               <svg width="70" height="70" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg" class="hand hand2">

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ViewChildren, QueryList, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,11 @@ import { AfterViewInit, Component, ViewChildren, QueryList, ElementRef } from '@
 })
 export class AppComponent {
   title = 'invitation';
-  // @ViewChildren('page') pages!: QueryList<ElementRef>;
+  @ViewChild('childDiv') childDiv!: ElementRef;
+  @ViewChild('childDiv2') childDiv2!: ElementRef;
+  @ViewChild('parentDiv') parentDiv!: ElementRef;
 
+  constructor(private renderer: Renderer2){}
 
   open() {
     const element = document.getElementById('envelope');
@@ -43,45 +46,11 @@ export class AppComponent {
     audio.play();
   }
 
-
-  // images: string[] = [
-  //   '../assets/1.JPG',
-  //   '../assets/2.JPG',
-  //   '../assets/3.JPG',
-  //   '../assets/4.JPG'
-  // ];
-
-  // ngAfterViewInit() {
-  //   const pagesArray = this.pages.toArray().map(el => el.nativeElement);
-
-  //   // Set zIndex for even pages
-  //   pagesArray.forEach((page, i) => {
-  //     if (i % 2 === 0) {
-  //       page.style.zIndex = (pagesArray.length - i).toString();
-  //     }
-  //     page.dataset.pageNum = (i + 1).toString();
-  //   });
-  // }
-
-  // onPageClick(event: Event) {
-  //   const page = event.target as HTMLElement | null;
-
-  //   if (!page) return; // Ensure it's not null
-
-  //   const pageNum = Number(page.dataset['pageNum']);
-
-  //   if (pageNum % 2 === 0) {
-  //     page.classList.remove('flipped');
-  //     (page.previousElementSibling as HTMLElement)?.classList.remove('flipped');
-  //   } else {
-  //     page.classList.add('flipped');
-  //     (page.nextElementSibling as HTMLElement)?.classList.add('flipped');
-  //   }
-  // }
-
   click1() {
     const element = document.getElementById('page1');
     const element2 = document.getElementById('page2');
+
+    
 
     if (element) {
       element.classList.toggle('flipped');
@@ -90,6 +59,18 @@ export class AppComponent {
     if (element2) {
       element2.classList.remove('incz');
 
+    }
+
+    const child = this.childDiv.nativeElement;
+    const child2 = this.childDiv2.nativeElement;
+    const parent = this.parentDiv.nativeElement;
+
+    if (child.classList.contains('flipped') && !child2.classList.contains('flipped')) {
+      setTimeout(() => {
+        this.renderer.addClass(parent, 'active-parent');
+      },1000);
+    } else {
+      this.renderer.removeClass(parent, 'active-parent');
     }
   }
 
@@ -105,6 +86,18 @@ export class AppComponent {
     if (element1) {
       element1.classList.add('incz');
 
+    }
+
+    const child = this.childDiv.nativeElement;
+    const child2 = this.childDiv2.nativeElement;
+    const parent = this.parentDiv.nativeElement;
+
+    if (child.classList.contains('flipped') && child2.classList.contains('flipped')) {
+      this.renderer.removeClass(parent, 'active-parent');
+    } else {
+      setTimeout(() => {
+        this.renderer.addClass(parent, 'active-parent');
+      },1000);
     }
   }
 }
