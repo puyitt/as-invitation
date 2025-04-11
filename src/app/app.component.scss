@@ -14,9 +14,10 @@ div {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
-    background-position: center;
-    animation: slideshow 15s infinite;
+    background-size: contain;
+    background-position: top;
+    animation: slideshow 20s infinite;
+    background-repeat: no-repeat;
 
     .overlay {
       position: absolute;
@@ -29,12 +30,31 @@ div {
 }
 
 @keyframes slideshow {
-  0% { background-image: url('../assets/img1_1.png'); }
-  20% { background-image: url('../assets/img1_2.png'); }
-  40% { background-image: url('../assets/img1_3.png'); }
-  60% { background-image: url('../assets/img1_4.png'); }
-  80% { background-image: url('../assets/img1_5.png'); }
-  100% { background-image: url('../assets/img1_1.png'); }
+  0% { 
+    background-image: url('../assets/img1_1.png');
+    background-color: #c4b39e;
+  }
+
+  20% { 
+    background-image: url('../assets/img1_2.png');
+    background-color: #a07b62;
+  }
+  40% { 
+    background-image: url('../assets/img1_3.png');
+    background-color: #c5b7a8;
+  }
+  60% { 
+    background-image: url('../assets/img1_4.png');
+    background-color: #b1b4bb;
+  }
+  80% { 
+    background-image: url('../assets/img1_5.png');
+    background-color: #b8b8b6;
+  }
+  100% { 
+    background-image: url('../assets/img1_1.png');
+    background-color: #c4b39e;
+  }
 }
 
 #envelope {
@@ -191,7 +211,7 @@ div {
 
     .sticker {
       position: absolute;
-      right: -12%;
+      right: -10%;
       top: 50%;
       width: 20%;
       height: auto;
