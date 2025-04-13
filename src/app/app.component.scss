@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'main-font';
+  src: url('../assets/main_font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -26,6 +33,35 @@ div {
       background-color: #0000008c;
       left: 0;
       top: 0;
+    }
+
+    .inviteLetter {
+      color:#fff;
+      position: absolute;
+      top: 0;
+      font-family: "main-font";
+      text-align: center;
+
+      .intro {
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+      
+      .intro2 {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .intro3 .place{
+        font-size: 10px;
+        letter-spacing: 4px;
+
+      }
+
+      .intro3 .time{
+        font-size: 10px;
+        letter-spacing: 4px;
+      }
     }
 }
 
