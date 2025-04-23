@@ -152,9 +152,9 @@ div {
 }
 
 .pocket {
-    border-left: 140px solid #fefefe;
-    border-right: 140px solid #fefefe;
-    border-bottom: 90px solid #e7e7e7;
+    border-left: 140px solid #a5a5a5;
+    border-right: 140px solid #a5a5a5;
+    border-bottom: 90px solid #c5c5c5;
     border-top: 90px solid transparent;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -228,7 +228,11 @@ div {
     margin-left: auto;
     margin-right: auto;
     perspective: 1200px;
-    background-color: rgb(118, 65, 0);
+    // background-color: rgb(118, 65, 0);
+    background-image: url(../assets/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,11 +266,16 @@ div {
     height: 100%;
     transform: rotateY(0deg) translateZ(1px);
     // backface-visibility: hidden;
-    background-color: rgb(118, 65, 0);
+    // background-color: rgb(118, 65, 0);
+    background-image: url(../assets/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 10px solid gray;
 
     .sticker {
       position: absolute;
-      right: -10%;
+      right: -12%;
       top: 50%;
       width: 20%;
       height: auto;
@@ -279,7 +288,11 @@ div {
     width: 100%;
     height: 100%;
     transform: rotateY(180deg) translateZ(1px);
-    background-color: rgb(118, 65, 0);
+    // background-color: rgb(118, 65, 0);
+    background-image: url(../assets/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,7 +329,14 @@ div {
     height: 100%;
     transform: rotateY(0deg) translateZ(1px);
     backface-visibility: hidden;
-    background-color: rgb(118, 65, 0);
+    // background-color: rgb(118, 65, 0);
+    background-image: url(../assets/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -332,7 +352,15 @@ div {
     width: 100%;
     height: 100%;
     transform: rotateY(180deg) translateZ(1px);
-    background-color: rgb(118, 65, 0);
+    // background-color: rgb(118, 65, 0);
+    background-image: url(../assets/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid gray;
 
     img {
       width: 97%;
