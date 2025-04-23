@@ -572,5 +572,21 @@ $speed: 2.2s;
           right: 0px;
         }
       }
+
+      .img1 {
+        .front {
+          border: 5px solid grey;
+
+          .sticker {
+            right: -13%;
+          }
+        }
+      }
+
+      .img2 {
+        .back {
+          border: 5px solid grey
+        }
+      }
   }
 }
